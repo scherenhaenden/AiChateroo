@@ -1,4 +1,4 @@
 .idea/
-AIChateroo/bin/
-
-AIChateroo/obj/
+**/obj/
+**/bin/
+**/node_modules/

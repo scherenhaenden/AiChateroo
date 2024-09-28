@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="LLamaSharp" Version="0.11.2" />
+      <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.11.2" />
+      <PackageReference Include="LLamaSharp.kernel-memory" Version="0.11.2" />
+      <PackageReference Include="LLamaSharp.semantic-kernel" Version="0.11.2" />
+      <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.39.240427.1" />
+      <PackageReference Include="Microsoft.Playwright" Version="1.43.0" />
+      <PackageReference Include="Microsoft.SemanticKernel" Version="1.9.0" />
+      <PackageReference Include="Selenium.WebDriver" Version="4.20.0" />
+      <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="124.0.6367.9100" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Engines\Chat\" />
+      <Folder Include="Modelling\Mappers\" />
+    </ItemGroup>
+
+</Project>

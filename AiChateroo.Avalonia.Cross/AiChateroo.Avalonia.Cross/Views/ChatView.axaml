@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AiChateroo.Avalonia.Cross.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AiChateroo.Avalonia.Cross.Views.ChatView"
+             x:DataType="vm:ChatViewModel">
+
+    <UserControl.DataContext>
+        <vm:ChatViewModel/>
+    </UserControl.DataContext>
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+        <!-- ListBox to display chat messages -->
+        <ListBox ItemsSource="{Binding Messages}" 
+                 BorderBrush="#bdc3c7" 
+                 BorderThickness="1" 
+                 Margin="5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Margin="5"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- TextBox for entering new messages -->
+        <TextBox x:Name="txtMessage" 
+                 Watermark="Enter your message here:"
+                 Text="{Binding MessageText, Mode=TwoWay}"
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Stretch" 
+                 Margin="5"
+                 Height="40" 
+                 MaxHeight="80"
+                 Width="300" 
+                 MaxWidth="500"/>
+
+        <!-- Button to send the message -->
+        <Button Command="{Binding AddMessageCommand}"
+                Content="Send" /> 
+                
+    </StackPanel>
+
+</UserControl>
