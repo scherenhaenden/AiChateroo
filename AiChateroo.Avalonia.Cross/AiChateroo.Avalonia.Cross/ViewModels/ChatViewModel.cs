@@ -32,9 +32,13 @@ namespace AiChateroo.Avalonia.Cross.ViewModels
         // Method to handle adding a new message
         private void AddMessage()
         {
+            
             // Add the current message text to the list and clear the input field
-            Messages.Add(MessageText);
-            MessageText = "";
+            if (!string.IsNullOrWhiteSpace(MessageText))
+            {
+                Messages.Add(MessageText);
+                MessageText = string.Empty;
+            }
         }
     }
 }
